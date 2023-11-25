@@ -196,11 +196,11 @@ section {
     /* position: relative; */
 }
 
-#All-recipes #filter{
+#All-recipes #filter {
     /* height:2000px; */
     /* position: absolute; */
     /* height:1000px; */
-    width:280px;
+    width: 280px;
     /* grid-column: 1; */
     display: flex;
     flex-direction: column;
@@ -208,13 +208,15 @@ section {
     /* border: 2px solid green; */
     /* height: 1000px; */
 }
-#Recipes{
-    width:calc(100% - 280px);
+
+#Recipes {
+    width: calc(100% - 280px);
     display: flex;
-    gap:12px;
+    gap: 12px;
     flex-wrap: wrap;
     /* border: 2px solid blue; */
 }
+
 #All-recipes #filter #filter-head {
     padding: 20px 0px 40px 10px;
     /* border: 2px solid red; */
@@ -262,9 +264,9 @@ section {
     /* height: 315px; */
     /* border: 2px solid red; */
     border-radius: 16px;
-background: #FFF;
-/* Shadow/shadow-sm */
-box-shadow: 0px 3px 8px -1px rgba(50, 50, 71, 0.05), 0px 0px 1px 0px rgba(12, 26, 75, 0.24);
+    background: #FFF;
+    /* Shadow/shadow-sm */
+    box-shadow: 0px 3px 8px -1px rgba(50, 50, 71, 0.05), 0px 0px 1px 0px rgba(12, 26, 75, 0.24);
 }
 
 .card>img {
@@ -296,6 +298,7 @@ box-shadow: 0px 3px 8px -1px rgba(50, 50, 71, 0.05), 0px 0px 1px 0px rgba(12, 26
 .card .card-base {
     margin: 15px 0px;
 }
+
 .card .card-base .fav-and-comm {
     display: flex;
     justify-content: center;
@@ -338,6 +341,142 @@ box-shadow: 0px 3px 8px -1px rgba(50, 50, 71, 0.05), 0px 0px 1px 0px rgba(12, 26
     display: flex;
     gap: 15px;
 }
-i:hover{
+
+i:hover {
     cursor: pointer;
+}
+
+footer {
+    padding: 10.4vh 9.1vw 5.2vh 9.1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10.5vh;
+}
+
+footer>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap:80px;
+    /* align-items: ; */
+}
+
+footer>div>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+footer>div>div:nth-child(1)>span {
+    width: 290px;
+    color: #253D4E;
+    text-align: justify;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+footer>div>div:nth-child(2),
+footer>div>div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px;
+    color: var(--black-alpha-60, rgba(0, 0, 0, 0.60));
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    /* 125% */
+}
+
+footer>div>div:nth-child(2)>span:nth-child(1),
+footer>div>div:nth-child(3)>span:nth-child(1) {
+    color: #253D4E;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+    /* 130% */
+}
+
+footer>div>div:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px;
+    width: 400px;
+}
+
+footer>div>div:nth-child(4) span {
+    color: var(--black-alpha-60, rgba(0, 0, 0, 0.60));
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+    /* 142.857% */
+    letter-spacing: 0.28px;
+}
+
+footer>div>div:nth-child(4)>div {
+    display: flex;
+    gap: 10px;
+}
+
+footer>div>div:nth-child(4) #email {
+    border: 1px solid #253D4E;
+    border-radius: 8px;
+    padding: 12px;
+    background: #FBFDFE;
+}
+
+footer>div>div:nth-child(4) #email>input {
+    border: none;
+}
+
+footer>div>div:nth-child(4) #subscribe {
+    border-radius: 5px;
+    background: #509E2F;
+    padding: 12px;
+    color: var(--purple-05, #FCFAFF);
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.16);
+    /* Archivo/Body/Button */
+    font-family: poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 125% */
+    letter-spacing: 0.32px;
+}
+footer img {
+    height: 46px;
+    width: 96px;
+}
+footer #social-media{
+    gap:40px;
+}
+footer #social-media>div{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    background: black;
+    color:white;
+}
+footer #social-media i{
+    width:30px;
+    height:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border:2px solid red; */
+    /* border-radius: 50%; */
 }
