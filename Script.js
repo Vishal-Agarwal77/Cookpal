@@ -135,27 +135,23 @@ while (count < All_cards.length) {
     <div class="card-base">
         <span class="duration">${All_cards[count].time}</span>
         <span class="fav-and-comm">
-            <i class="fa-regular fa-heart fa-lg"></i>
+            <i class="fa-regular fa-heart fa-lg" onclick="like(this)"></i>
             <i class="fa-regular fa-comment fa-lg"></i>
         </span>
     </div>`;
     section.appendChild(card);
     count++;
 }
-const like = document.getElementsByClassName("fa-heart");
-for (let item of like) {
-    let parent = item.parentNode.parentNode.parentNode;;
-    item.addEventListener("click", () => {
-        if (parent.isLiked) {
-            console.log("liked");
-            item.style.color = "#191919";
-            parent.isLiked = false;
-        }
-        else {
-            item.style.color = "#ec4b4b";
-            parent.isLiked = true;
-        }
-    })
+function like(item){
+    let parent=item.parentNode.parentNode.parentNode;
+    if(parent.isLiked){
+        item.style.color = "#191919";
+        parent.isLiked = false;
+    }
+    else {
+        item.style.color = "#ec4b4b";
+        parent.isLiked = true;
+    }
 }
 const rating = document.querySelectorAll("input[type=checkbox]");
 for (let item of rating) {
@@ -180,7 +176,7 @@ for (let item of rating) {
                         <div class="card-base">
                             <span class="duration">${i.time}</span>
                             <span class="fav-and-comm">
-                                <i class="fa-regular fa-heart fa-lg"></i>
+                                <i class="fa-regular fa-heart fa-lg" onclick="like(this)"></i>
                                 <i class="fa-regular fa-comment fa-lg"></i>
                             </span>
                         </div>`;
@@ -202,7 +198,7 @@ for (let item of rating) {
                         <div class="card-base">
                             <span class="duration">${i.time}</span>
                             <span class="fav-and-comm">
-                                <i class="fa-regular fa-heart fa-lg"></i>
+                                <i class="fa-regular fa-heart fa-lg" onclick="like(this)"></i>
                                 <i class="fa-regular fa-comment fa-lg"></i>
                             </span>
                         </div>`;
@@ -229,7 +225,7 @@ for (let item of rating) {
                     <div class="card-base">
                         <span class="duration">${i.time}</span>
                         <span class="fav-and-comm">
-                            <i class="fa-regular fa-heart fa-lg"></i>
+                            <i class="fa-regular fa-heart fa-lg" onclick="like(this)"></i>
                             <i class="fa-regular fa-comment fa-lg"></i>
                         </span>
                     </div>`;
@@ -261,7 +257,7 @@ for (let item of filter) {
                         <div class="card-base">
                             <span class="duration">${i.time}</span>
                             <span class="fav-and-comm">
-                                <i class="fa-regular fa-heart fa-lg"></i>
+                                <i class="fa-regular fa-heart fa-lg" onclick="like(this)"></i>
                                 <i class="fa-regular fa-comment fa-lg"></i>
                             </span>
                         </div>`;
@@ -282,7 +278,7 @@ for (let item of filter) {
                         <div class="card-base">
                             <span class="duration">${i.time}</span>
                             <span class="fav-and-comm">
-                                <i class="fa-regular fa-heart fa-lg"></i>
+                                <i class="fa-regular fa-heart fa-lg" onclick="like(this)"></i>
                                 <i class="fa-regular fa-comment fa-lg"></i>
                             </span>
                         </div>`;
@@ -304,7 +300,7 @@ for (let item of filter) {
                         <div class="card-base">
                             <span class="duration">${i.time}</span>
                             <span class="fav-and-comm">
-                                <i class="fa-regular fa-heart fa-lg"></i>
+                                <i class="fa-regular fa-heart fa-lg" onclick="like(this)"></i>
                                 <i class="fa-regular fa-comment fa-lg"></i>
                             </span>
                         </div>`;
@@ -334,7 +330,7 @@ search.addEventListener("keyup", (event) => {
                         <div class="card-base">
                             <span class="duration">${i.time}</span>
                             <span class="fav-and-comm">
-                                <i class="fa-regular fa-heart fa-lg"></i>
+                                <i class="fa-regular fa-heart fa-lg" onclick="like(this)"></i>
                                 <i class="fa-regular fa-comment fa-lg"></i>
                             </span>
                         </div>`;

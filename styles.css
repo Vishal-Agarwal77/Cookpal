@@ -8,10 +8,13 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0vh 7vw;
-    height: 10.5vh;
+    padding: 3vh 7vw;
+    height: fit-content;
+    margin-bottom: 10px;
 }
-
+nav #drawer>div{
+    display: none;
+}
 #menu {
     display: flex;
     justify-content: center;
@@ -29,7 +32,7 @@ nav {
 #menu-text span {
     color: var(--Black, #253D4E);
     font-family: Poppins;
-    font-size: 16px;
+    font-size: 0.95rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -39,6 +42,23 @@ nav {
     color: #509E2F;
     cursor: pointer;
 }
+@media screen and (max-width : 470px){
+    nav{
+        display: flex;
+    }
+    nav #drawer{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    nav #drawer>div{
+        display: inline;
+    }
+    nav #menu{
+        display: none;
+    }
+}
 
 section {
     padding: 0vh 5vw;
@@ -46,12 +66,13 @@ section {
 
 #hero>div {
     width: 100%;
-    height: 60vh;
+    height: 355px;
+    border-radius: 30px;
     /* border: 2px solid red; */
     background: url('./images/Rectangle 20.png');
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: contain;
+    background-size: cover;
     /* z-index: 1; */
 }
 
@@ -63,7 +84,7 @@ section {
 #hero #hero-content>p:nth-child(1) {
     color: #DC582A;
     font-family: Poppins;
-    font-size: 1.4rem;
+    font-size: 1.8vw;
     font-style: normal;
     font-weight: 500;
     line-height: 127%;
@@ -73,7 +94,7 @@ section {
 #hero #hero-content>p:nth-child(2) {
     color: #FFF;
     font-family: Poppins;
-    font-size: 2.4rem;
+    font-size: 3vw;
     font-style: normal;
     font-weight: 700;
     line-height: 127%;
@@ -84,13 +105,27 @@ section {
     margin-top: 1vh;
     color: #FFF;
     font-family: Poppins;
-    font-size: 1.2rem;
+    font-size: 1.5vw;
     font-style: normal;
     font-weight: 500;
     line-height: 127%;
     /* 25.4px */
 }
-
+@media screen and (max-width:600px){
+    #hero #hero-content {
+        padding: 7% 5%;
+        width: 50vw;
+    }
+    #hero #hero-content>p:nth-child(1){
+        font-size:12px;
+    }
+    #hero #hero-content>p:nth-child(2){
+        font-size:22px;
+    }
+    #hero #hero-content>p:nth-child(3){
+        font-size:8px;
+    }
+}
 #search {
     display: flex;
     flex-direction: column;
@@ -149,8 +184,11 @@ section {
     padding-top: 40px;
     display: flex;
     gap: 20px;
+    overflow-x: scroll;
 }
-
+#search-filter::-webkit-scrollbar {
+    display: none;
+  }
 #search #search-filter .filter {
     padding: 30px;
     /* border: 2px solid red; */
@@ -195,12 +233,11 @@ section {
     /* border: 2px solid red; */
     /* position: relative; */
 }
-
 #All-recipes #filter {
     /* height:2000px; */
     /* position: absolute; */
     /* height:1000px; */
-    width: 280px;
+    width: 20.4vw;
     /* grid-column: 1; */
     display: flex;
     flex-direction: column;
@@ -210,19 +247,18 @@ section {
 }
 
 #Recipes {
-    width: calc(100% - 280px);
+    width: calc(100% - 20.4vw);
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
     /* border: 2px solid blue; */
 }
-
 #All-recipes #filter #filter-head {
     padding: 20px 0px 40px 10px;
     /* border: 2px solid red; */
     color: #252525;
     font-family: Poppins;
-    font-size: 22px;
+    font-size: 1.3rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -234,33 +270,73 @@ section {
     justify-content: flex-start;
     gap: 15px;
 }
-
+#All-recipes #filter #filter-base>div{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
 #All-recipes #filter #filter-base>p {
     color: #252525;
     font-family: Poppins;
-    font-size: 18px;
+    font-size: 1.1rem;
     font-style: normal;
     font-weight: 550;
     line-height: normal;
 }
 
-#All-recipes #filter #filter-base>div {
+#All-recipes #filter #filter-base>div>div {
     display: flex;
     gap: 10px;
     color: #253D4E;
     font-family: Inter;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
-
+@media screen and (max-width: 590px){
+    #All-recipes{
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+    }
+    #All-recipes #filter {
+        /* border: 2px solid red; */
+        width: 100%;
+        display: flex;
+        gap:20px;
+    }
+    #All-recipes #filter #filter-head{
+        padding: 20px 10px;
+    }
+    #All-recipes #filter #filter-base{
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+        gap:20px;
+    }
+    #All-recipes #filter #filter-base>div{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 20px;
+    }
+    #Recipes{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
 .card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 15px;
-    width: 300px;
+    min-width: 180px;
+    min-height: 300px;
+    width: 22vw;
     /* height: 315px; */
     /* border: 2px solid red; */
     border-radius: 16px;
@@ -279,10 +355,10 @@ section {
     padding: 0px 10px;
     color: #A1A1A1;
     font-family: Inter;
-    font-size: 10px;
+    font-size: 0.6rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px;
+    line-height: 1.4rem;
     /* 240% */
 }
 
@@ -308,10 +384,10 @@ section {
 .card .card-head>span:nth-child(1) {
     color: #252525;
     font-family: Inter;
-    font-size: 20px;
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 24px;
+    line-height: 1.4rem;
     /* 120% */
 }
 
@@ -320,7 +396,7 @@ section {
     gap: 5px;
     color: var(--Grey, #ADADAD);
     font-family: Inter;
-    font-size: 12px;
+    font-size: 0.7rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -330,7 +406,7 @@ section {
     color: #DC582A;
     /* Headings/h3 */
     font-family: Inter;
-    font-size: 20px;
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 600;
     line-height: 136.523%;
@@ -357,9 +433,10 @@ footer {
 
 footer>div {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
-    gap:80px;
+    gap:70px;
+    flex-wrap: wrap;
     /* align-items: ; */
 }
 
@@ -375,7 +452,7 @@ footer>div>div:nth-child(1)>span {
     color: #253D4E;
     text-align: justify;
     font-family: Poppins;
-    font-size: 16px;
+    font-size: 0.9rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -389,7 +466,7 @@ footer>div>div:nth-child(3) {
     gap: 24px;
     color: var(--black-alpha-60, rgba(0, 0, 0, 0.60));
     font-family: Poppins;
-    font-size: 16px;
+    font-size: 0.9rem;
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
@@ -400,28 +477,38 @@ footer>div>div:nth-child(2)>span:nth-child(1),
 footer>div>div:nth-child(3)>span:nth-child(1) {
     color: #253D4E;
     font-family: Poppins;
-    font-size: 20px;
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 600;
-    line-height: 26px;
+    line-height: 1.53rem;
     /* 130% */
 }
 
-footer>div>div:nth-child(4) {
+footer>div:nth-child(1)>div:nth-child(4) {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 24px;
     width: 400px;
+    min-width: 300px;
+    /* border:2px solid red; */
+}
+@media screen and (max-width:1280px){
+    footer>div:nth-child(1)>div:nth-child(4){
+        width:fit-content;
+    }
+    footer>div:nth-child(1)>div:nth-child(4) input{
+        width: 85%;
+    }
 }
 
 footer>div>div:nth-child(4) span {
     color: var(--black-alpha-60, rgba(0, 0, 0, 0.60));
     font-family: Poppins;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-style: normal;
     font-weight: 300;
-    line-height: 20px;
+    line-height: 1.18rem;
     /* 142.857% */
     letter-spacing: 0.28px;
 }
@@ -450,10 +537,10 @@ footer>div>div:nth-child(4) #subscribe {
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.16);
     /* Archivo/Body/Button */
     font-family: poppins;
-    font-size: 16px;
+    font-size: 0.9rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px;
+    line-height: 1.2rem;
     /* 125% */
     letter-spacing: 0.32px;
 }
@@ -462,7 +549,7 @@ footer img {
     width: 96px;
 }
 footer #social-media{
-    gap:40px;
+    gap:20px;
 }
 footer #social-media>div{
     width:30px;
