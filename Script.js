@@ -159,7 +159,7 @@ for (let item of like) {
 }
 const rating = document.querySelectorAll("input[type=checkbox]");
 for (let item of rating) {
-    item.addEventListener("click", () => {
+    item.addEventListener("change", () => {
         if (item.checked) {
             const recipes = document.getElementById("Recipes");
             console.log(recipes);
@@ -209,6 +209,31 @@ for (let item of rating) {
                         section.appendChild(card);
                     }
                 }
+            }
+        }
+        if(item.checked==false){
+            const recipes = document.getElementById("Recipes");
+            console.log("unchecked");
+            while (recipes.hasChildNodes()) {
+                recipes.removeChild(recipes.firstChild);
+            }
+            for (let i of All_cards) {
+                const card = document.createElement("div");
+                card.className = "card";
+                card.innerHTML = `<img src="${i.imageSrc}">
+                    <p>${i.type}</p>
+                    <div class="card-head">
+                        <span class="head">${i.name}</span>
+                        <span class="rating"><img src="./images/Star.png">${i.rating}</span>
+                    </div>
+                    <div class="card-base">
+                        <span class="duration">${i.time}</span>
+                        <span class="fav-and-comm">
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                            <i class="fa-regular fa-comment fa-lg"></i>
+                        </span>
+                    </div>`;
+                section.appendChild(card);
             }
         }
     })
