@@ -338,3 +338,21 @@ search.addEventListener("keyup", (event) => {
         }
     }
 })
+const drawer=document.getElementById("drawer-icon");
+drawer.addEventListener("click",()=>{
+    // const body=document.getElementsByTagName("body")[0];
+    // const nav=document.getElementsByTagName("nav")[0];
+    const show_drawer=document.querySelector("#drawer-menu");
+    const icon=document.getElementById("drawer");
+    const menu=document.getElementById("menu");
+    const dummy=document.getElementById("dummy");
+    dummy.style.display="inline";
+    show_drawer.style.display="flex";
+    // nav.style.background="white";
+    // nav.style.height="100%";
+    // show_drawer.style.background="rgba(0, 0, 0, 0.50)";
+    icon.style.display="none";
+    menu.style.display="none";
+    // body.style.background="rgba(0, 0, 0, 0.50)";
+    console.log("drawer");
+})
